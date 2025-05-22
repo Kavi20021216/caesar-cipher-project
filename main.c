@@ -19,3 +19,11 @@ char shiftEncryptChar(char ch, int key) {
     int index = (ch - 'A' + key + SIZE) % SIZE;
     return alphabetQueue[index];
 }
+
+char shiftDecryptChar(char ch, int key) {
+    if (!isalpha(ch)) return ch;
+
+    ch = toupper(ch);
+    int index = (ch - 'A' - key + SIZE) % SIZE;
+    return alphabetQueue[index];
+}
