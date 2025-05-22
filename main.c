@@ -11,3 +11,11 @@ void initializeQueue() {
         alphabetQueue[i] = 'A' + i;
     }
 }
+
+char shiftEncryptChar(char ch, int key) {
+    if (!isalpha(ch)) return ch;
+
+    ch = toupper(ch);
+    int index = (ch - 'A' + key + SIZE) % SIZE;
+    return alphabetQueue[index];
+}
