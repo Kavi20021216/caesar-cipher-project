@@ -48,21 +48,25 @@ void decryptMessage(const char *input, int key, char *output) {
 }
 
 
+
 int main() {
-    char option;
+    char option;   // Stores user's choice: Encrypt (E) or Decrypt (D)
     char originalText[1000], processedText[1000];
     int shift;
 
+     // Initialize any queue structure if used internally (assumed for message handling)
     initializeQueue();
 
+    // Prompt user to choose encryption or decryption
     printf("Choose an option - Encrypt (E) or Decrypt (D): ");
     scanf(" %c", &option);
-    getchar();  // flush newline from input buffer
+    getchar();   // flush newline from input buffer
 
     if (option == 'E' || option == 'e') {
+        // Handle encryption
         printf("Enter plain text: ");
         fgets(originalText, sizeof(originalText), stdin);
-        originalText[strcspn(originalText, "\n")] = '\0';
+        originalText[strcspn(originalText, "\n")] = '\0';   // Remove newline character from input
 
         printf("Enter shift key: ");
         scanf("%d", &shift);
@@ -70,21 +74,23 @@ int main() {
         encryptMessage(originalText, shift, processedText);
 
         printf("*\n");
-        printf("Encrypted Message: %s\n", processedText);
+        printf("Encrypted Message: %s\n", processedText);    // Display encrypted result
 
     } else if (option == 'D' || option == 'd') {
+         // Handle decryption
         printf("Enter encrypted text: ");
         fgets(originalText, sizeof(originalText), stdin);
         originalText[strcspn(originalText, "\n")] = '\0';
 
         printf("Enter shift key: ");
-        scanf("%d", &shift);
+        scanf("%d", &shift);   // Read Caesar cipher shift value used during encryption
 
         decryptMessage(originalText, shift, processedText);
 
         printf("*\n");
-        printf("Decrypted Message: %s\n", processedText);
+        printf("Decrypted Message: %s\n", processedText);   // Display decrypted result
     } else {
+        // Handle invalid option
         printf("Invalid input. Please choose 'E' or 'D'.\n");
     }
 
