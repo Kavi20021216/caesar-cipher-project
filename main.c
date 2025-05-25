@@ -39,13 +39,13 @@ void encryptMessage(const char *input, int key, char *output) {
         output[i] = shiftEncryptChar(input[i], key);
     }
     output[strlen(input)] = '\0';
-
+}
 void decryptMessage(const char *input, int key, char *output) {
     for (int i = 0; input[i] != '\0'; i++) {
         output[i] = shiftDecryptChar(input[i], key);
     }
     output[strlen(input)] = '\0';
-
+}
 
 
 int main() {
