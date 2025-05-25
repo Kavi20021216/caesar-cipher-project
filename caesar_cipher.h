@@ -4,9 +4,13 @@
 #define SIZE 26
 
 
-// Alphabet queue initialization and character-level Caesar logic
+// Initializes the circular alphabet queue with letters A–Z.
 void initializeQueue();
+
+// Encrypts a single character by shifting forward in the queue.
 char shiftEncryptChar(char ch, int key);
+
+// Decrypts a single character by shifting backward in the queue.
 char shiftDecryptChar(char ch, int key);
 
 //Full message Caesar logic
