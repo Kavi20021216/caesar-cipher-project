@@ -34,12 +34,17 @@ char shiftDecryptChar(char ch, int key) {
     return alphabetQueue[index];
 }
 
+//Function to encrypt the input message using a shift cipher
 void encryptMessage(const char *input, int key, char *output) {
     for (int i = 0; input[i] != '\0'; i++) {
+        // Encrypt each character using the shiftEncryptChar function and store it in output
         output[i] = shiftEncryptChar(input[i], key);
     }
+     // Null-terminate the encrypted output string
     output[strlen(input)] = '\0';
 }
+
+// Function to decrypt the input message using a shift cipher 
 void decryptMessage(const char *input, int key, char *output) {
     for (int i = 0; input[i] != '\0'; i++) {
         output[i] = shiftDecryptChar(input[i], key);
