@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-#include "header.h"
+#include "caesar_cipher.h"
 
 char alphabetQueue[SIZE];
 
@@ -88,5 +88,5 @@ int main() {
         printf("Invalid input. Please choose 'E' or 'D'.\n");
     }
 
-    return 0;
+    return 0;
 }
