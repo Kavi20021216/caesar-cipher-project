@@ -99,5 +99,5 @@ int main() {
         printf("Invalid input. Please choose 'E' or 'D'.\n");
     }
 
-    return 0;
+   return 0;
 }
